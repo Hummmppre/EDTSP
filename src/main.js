@@ -97,9 +97,9 @@
      1) Create an "OAuth client ID" (Web application) at
         https://console.cloud.google.com/apis/credentials
      2) Add your site address under "Authorized JavaScript origins"
-        (e.g. http://localhost:5500)
-     3) Paste the client ID below */
-  const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+        (exactly: http://localhost:3000)
+     3) Paste the client ID below (the same one as in .env) */
+  const GOOGLE_CLIENT_ID = '732939914611-58m2deujfa9cdap8klm4d65oept0q9jp.apps.googleusercontent.com';
 
   /* ----- Shared helpers ----- */
   const alertBox = $('#alert');
@@ -171,11 +171,17 @@
     googleBtn.addEventListener('click', async () => {
       clearAlert();
 
-      if (GOOGLE_CLIENT_ID.startsWith('YOUR_')) {
-        return showAlert('Google login isn’t set up yet. Add your Google client ID in js/main.js.');
+      // Catches placeholder / sample IDs before Google rejects them
+      const idLooksReal =
+        GOOGLE_CLIENT_ID.endsWith('.apps.googleusercontent.com') &&
+        !GOOGLE_CLIENT_ID.startsWith('123456789-') &&
+        !GOOGLE_CLIENT_ID.includes('PASTE');
+
+      if (!idLooksReal) {
+        return showAlert('Google login isn’t set up yet. Paste your real Google client ID in main.js.');
       }
       if (location.protocol === 'file:') {
-        return showAlert('Google sign-in can’t run from a file. Open the site through a local server (for example VS Code Live Server at http://localhost:5500).');
+        return showAlert('Open the site through your Node server (http://localhost:3000), not as a file.');
       }
 
       googleBtn.disabled = true;
@@ -183,26 +189,32 @@
       try {
         await loadGoogle();
 
-        const client = google.accounts.oauth2.initTokenClient({
+        const client = google.accounts.oauth2.initCodeClient({
           client_id: GOOGLE_CLIENT_ID,
           scope: 'openid email profile',
+          ux_mode: 'popup',
 
           callback: async resp => {
             googleBtn.disabled = false;
-            if (resp.error) {
+            if (resp.error || !resp.code) {
               return showAlert('Google sign-in was cancelled or failed. Please try again.');
             }
 
             try {
-              const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                headers: { Authorization: 'Bearer ' + resp.access_token }
+              // Send the one-time code to YOUR Node server
+              const res = await fetch('/api/auth/google', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({ code: resp.code })
               });
-              const user = await res.json();
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.error || 'Sign-in failed.');
 
-              // TODO: send resp.access_token to your backend, verify it there, then start the session
-              showAlert('Signed in with Google as ' + user.email + ' (demo).', true);
+              showAlert('Signed in as ' + data.user.email + '. Redirecting…', true);
+              setTimeout(() => { location.href = '/portal'; }, 700);
             } catch (err) {
-              showAlert('We couldn’t read your Google profile. Please try again.');
+              showAlert(err.message || 'We couldn’t sign you in. Please try again.');
             }
           },
 
@@ -212,7 +224,7 @@
           }
         });
 
-        client.requestAccessToken();
+        client.requestCode();
       } catch (err) {
         googleBtn.disabled = false;
         showAlert('We couldn’t reach Google. Check your connection and try again.');
@@ -223,6 +235,7 @@
   /* ----- Sign up ----- */
   if (signupForm) {
     const passInput = $('#signPass');
+    const strength = $('#strength');
 
     const passwordRules = {
       len: v => v.length >= 8,
@@ -230,9 +243,7 @@
       num: v => /\d/.test(v)
     };
 
-      // Live password checklist + strength bars
-    const strength = $('#strength');
-
+    // Live password checklist + strength bars
     passInput.addEventListener('input', () => {
       let passed = 0;
 
