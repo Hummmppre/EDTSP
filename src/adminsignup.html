@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin sign up · Esperon Dairy Student Portal</title>
+<script>
+  /* Apply saved / system theme before first paint (prevents a light flash) */
+  (function(){var t=null;try{t=localStorage.getItem('esperon-theme')}catch(e){}
+  if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  document.documentElement.setAttribute('data-theme',t)})();
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/auth.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <clipPath id="curve" clipPathUnits="objectBoundingBox">
+    <path d="M0,0 H0.985 C0.93,0.3 0.97,0.62 0.88,1 H0 Z"/>
+  </clipPath>
+</svg>
+
+<div class="auth d-lg-flex">
+  <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><i class="bi bi-moon-stars i-moon"></i><i class="bi bi-sun i-sun"></i></button>
+
+  <!-- Left brand panel -->
+  <aside class="panel">
+    <div class="panel-inner">
+      <span class="orb" aria-hidden="true"></span>
+      <div class="rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <i class="bi bi-droplet-fill drop d1" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d2" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d3" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d4" aria-hidden="true"></i>
+
+      <a href="../trainee/traineelp.html" class="brand">
+        <span class="brand-mark"><img src="../img/logo1.svg" alt=""></span>
+        <span><span class="brand-name">ESPERON</span><span class="brand-sub">Dairy · Admin Portal</span></span>
+      </a>
+
+      <div class="panel-body">
+        <div class="eyebrow"><i class="bi bi-stars me-2"></i>Administrator workspace</div>
+        <h2 class="panel-title">Lead with <em>clarity.</em></h2>
+        <p class="panel-copy">Review applications, track payments and keep every trainee and cow schedule on course.</p>
+      </div>
+
+      <div class="panel-foot">
+        <div class="perks">
+          <span><i class="bi bi-shield-lock"></i>Restricted access</span>
+          <span><i class="bi bi-speedometer2"></i>Full oversight</span>
+        </div>
+        <p class="quote">Every trainee, payment and schedule, in one place.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Right form -->
+  <main class="form-side">
+    <div class="form-wrap">
+      <div class="kicker">Administrator Access</div>
+      <h1 class="welcome">Create an <em>admin account.</em></h1>
+      <p class="sub">Set up your administrator profile with your access code.</p>
+
+      <div class="tabs">
+        <a class="tab" href="adminlogin.html">Log in</a>
+        <a class="tab active" href="adminsignup.html" aria-current="page">Sign up</a>
+      </div>
+      <div id="alert" class="note-alert d-none" role="alert"></div>
+
+      <form id="admin-signup-form" novalidate>
+        <div class="section-head"><h2>Personal Information</h2><span class="req-note">* Required fields</span></div>
+
+        <div class="row-2">
+          <div>
+            <label class="lbl" for="firstName">First Name <span class="req">*</span></label>
+            <div class="field">
+              <i class="bi bi-person lead-icon"></i>
+              <input type="text" id="firstName" placeholder="e.g. Alex" autocomplete="given-name" required>
+            </div>
+          </div>
+          <div>
+            <label class="lbl" for="lastName">Last Name <span class="req">*</span></label>
+            <div class="field">
+              <i class="bi bi-person lead-icon"></i>
+              <input type="text" id="lastName" placeholder="e.g. Morgan" autocomplete="family-name" required>
+            </div>
+          </div>
+        </div>
+
+        <label class="lbl mt-4" for="signEmail">Email Address <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-envelope lead-icon"></i>
+          <input type="email" id="signEmail" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+
+        <label class="lbl mt-4" for="signPhone">Contact Number <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-telephone lead-icon"></i>
+          <input type="tel" id="signPhone" placeholder="e.g. +63 917 123 4567" autocomplete="tel" required>
+        </div>
+
+        <div class="section-head mt-5"><h2>Account Credentials</h2></div>
+
+        <label class="lbl" for="signUser">Username <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-at lead-icon"></i>
+          <input type="text" id="signUser" placeholder="Choose a username" autocomplete="username" required>
+        </div>
+
+        <label class="lbl mt-4" for="signPass">Password <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-lock lead-icon"></i>
+          <input type="password" id="signPass" placeholder="Create a strong password" autocomplete="new-password" required>
+          <button type="button" class="eye" aria-label="Show password"><i class="bi bi-eye"></i></button>
+        </div>
+        <div class="strength" id="strength" data-level="0" aria-hidden="true"><span></span><span></span><span></span></div>
+        <ul class="checks" id="pass-checks">
+          <li data-rule="len"><i class="bi bi-check2"></i>8+ characters</li>
+          <li data-rule="upper"><i class="bi bi-check2"></i>One uppercase letter</li>
+          <li data-rule="num"><i class="bi bi-check2"></i>One number</li>
+        </ul>
+
+        <label class="lbl mt-4" for="signConfirm">Confirm Password <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-lock lead-icon"></i>
+          <input type="password" id="signConfirm" placeholder="Repeat your password" autocomplete="new-password" required>
+          <button type="button" class="eye" aria-label="Show password"><i class="bi bi-eye"></i></button>
+        </div>
+
+        <div class="section-head mt-5"><h2>Authorization</h2></div>
+
+        <label class="lbl" for="accessCode">Admin Access Code <span class="req">*</span></label>
+        <div class="field">
+          <i class="bi bi-key lead-icon"></i>
+          <input type="password" id="accessCode" placeholder="Enter your access code" autocomplete="off" required>
+          <button type="button" class="eye" aria-label="Show access code"><i class="bi bi-eye"></i></button>
+        </div>
+
+        <button type="submit" class="btn-submit">Create admin account <i class="bi bi-arrow-right"></i></button>
+        <p class="switch">Already have an account? <a href="adminlogin.html">Log in instead</a></p>
+      </form>
+
+      <div class="protect"><i class="bi bi-shield-lock"></i>Admin accounts need a valid access code from the system owner.</div>
+      <a href="../trainee/traineelp.html" class="back"><i class="bi bi-chevron-left"></i> Back to Esperon Dairy</a>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
