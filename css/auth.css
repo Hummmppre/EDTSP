@@ -828,3 +828,8 @@
   .auth-page .row-2 { grid-template-columns: 1fr; }
   .auth-page .row-2 > div + div { margin-top: 1.5rem; }
 }
+
+.auth-page .btn-submit:disabled {
+  opacity: .65;
+  pointer-events: none;
+}
