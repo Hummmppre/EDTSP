@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin log in · Esperon Dairy Student Portal</title>
+<script>
+  /* Apply saved / system theme before first paint (prevents a light flash) */
+  (function(){var t=null;try{t=localStorage.getItem('esperon-theme')}catch(e){}
+  if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  document.documentElement.setAttribute('data-theme',t)})();
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/auth.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <clipPath id="curve" clipPathUnits="objectBoundingBox">
+    <path d="M0,0 H0.985 C0.93,0.3 0.97,0.62 0.88,1 H0 Z"/>
+  </clipPath>
+</svg>
+
+<div class="auth d-lg-flex">
+  <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><i class="bi bi-moon-stars i-moon"></i><i class="bi bi-sun i-sun"></i></button>
+
+  <!-- Left brand panel -->
+  <aside class="panel">
+    <div class="panel-inner">
+      <span class="orb" aria-hidden="true"></span>
+      <div class="rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <i class="bi bi-droplet-fill drop d1" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d2" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d3" aria-hidden="true"></i>
+      <i class="bi bi-droplet-fill drop d4" aria-hidden="true"></i>
+
+      <a href="../trainee/traineelp.html" class="brand">
+       <span class="brand-mark"><img src="../img/logo1.svg" alt=""></span>
+        <span><span class="brand-name">ESPERON</span><span class="brand-sub">Dairy · Admin Portal</span></span>
+      </a>
+
+      <div class="panel-body">
+        <div class="eyebrow"><i class="bi bi-stars me-2"></i>Administrator workspace</div>
+        <h2 class="panel-title">Lead with <em>clarity.</em></h2>
+        <p class="panel-copy">Review applications, track payments and keep every trainee and cow schedule on course.</p>
+      </div>
+
+      <div class="panel-foot">
+        <div class="perks">
+          <span><i class="bi bi-shield-lock"></i>Restricted access</span>
+          <span><i class="bi bi-speedometer2"></i>Full oversight</span>
+        </div>
+        <p class="quote">Every trainee, payment and schedule, in one place.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Right form -->
+  <main class="form-side">
+    <div class="form-wrap">
+      <div class="kicker">Administrator Access</div>
+      <h1 class="welcome">Welcome back, <em>admin.</em></h1>
+      <p class="sub">Log in to manage trainees, payments and schedules.</p>
+
+      <div class="tabs">
+        <a class="tab active" href="adminlogin.html" aria-current="page">Log in</a>
+        <a class="tab" href="adminsignup.html">Sign up</a>
+      </div>
+      <div id="alert" class="note-alert d-none" role="alert"></div>
+       
+        <button type="button" class="btn-google" id="googleLogin">
+          <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C1 16.4 0 20.1 0 24s1 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+          Continue with Google
+        </button>
+
+         <div class="divider"><span>or</span></div>
+         
+      <form id="admin-login-form" novalidate>
+        <label class="lbl" for="adminId">Username or email</label>
+        <div class="field">
+          <i class="bi bi-person-badge lead-icon"></i>
+          <input type="text" id="adminId" placeholder="Enter your username or email" autocomplete="username" required>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-end mt-4">
+          <label class="lbl mb-0" for="adminPass">Password</label>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+        <div class="field mt-2">
+          <i class="bi bi-lock lead-icon"></i>
+          <input type="password" id="adminPass" placeholder="Enter your password" autocomplete="current-password" required>
+          <button type="button" class="eye" aria-label="Show password"><i class="bi bi-eye"></i></button>
+        </div>
+
+        <button type="submit" class="btn-submit">Log in to admin portal <i class="bi bi-arrow-right"></i></button>
+        <p class="switch">Need an admin account? <a href="adminsignup.html">Sign up</a></p>
+        <p class="switch" style="margin-top:-.8rem">Are you a trainee? <a href="../trainee/traineelogin.html">Trainee log in</a></p>
+      </form>
+
+      <div class="protect"><i class="bi bi-shield-lock"></i>Restricted area. Authorized administrators only.</div>
+      <a href="../trainee/traineelp.html" class="back"><i class="bi bi-chevron-left"></i> Back to Esperon Dairy</a>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

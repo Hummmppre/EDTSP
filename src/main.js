@@ -151,7 +151,7 @@
     });
   }
 
-  /* ----- Google login ----- */
+  /* ----- Google login for trainee----- */
   const googleBtn = $('#googleLogin');
 
   function loadGoogle() {
@@ -231,6 +231,44 @@
       }
     });
   }
+
+  /* ---------- Google sign-in (administrators) ---------- */
+// Only works for an admin account that already exists (created with the access code)
+app.post('/api/admin/google', adminLimiter, async (req, res) => {
+  const { code } = req.body || {};
+  if (typeof code !== 'string' || !code) {
+    return res.status(400).json({ error: 'Missing Google code.' });
+  }
+
+  try {
+    const { tokens } = await googleClient.getToken(code);
+    const ticket = await googleClient.verifyIdToken({
+      idToken: tokens.id_token,
+      audience: GOOGLE_CLIENT_ID
+    });
+    const profile = ticket.getPayload();
+
+    if (!profile.email || !profile.email_verified) {
+      return res.status(403).json({ error: 'Your Google email is not verified.' });
+    }
+
+    const users = loadUsers();
+    const user = users.find(u =>
+      roleOf(u) === 'admin' && (u.email || '').toLowerCase() === profile.email.toLowerCase()
+    );
+    if (!user) {
+      return res.status(403).json({ error: 'No administrator account uses this Google email. Create an admin account first.' });
+    }
+
+    user.googleId = profile.sub;
+    user.picture = profile.picture || user.picture;
+    saveUsers(users);
+    startSession(req, res, user);
+  } catch (err) {
+    console.error('Admin Google sign-in failed:', err.message);
+    res.status(401).json({ error: 'Google sign-in failed. Please try again.' });
+  }
+});
 
   /* ----- Sign up ----- */
   if (signupForm) {
