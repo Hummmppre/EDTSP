@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View ESPERON total training payment, remaining balance, and payment history."
+    />
+    <title>Payments · ESPERON Trainee Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../../css/style.css" rel="stylesheet" />
+    <link href="../../../css/portal.css" rel="stylesheet" />
+    <link href="../../../css/pages.css" rel="stylesheet" />
+  </head>
+  <body data-page="payments">
+    <div class="portal-shell">
+      <aside class="side" aria-label="Primary navigation">
+        <div class="side-inner">
+          <a class="brand" href="dashboard.html">
+            <span class="brand-mark"><i class="fa-solid fa-cow"></i></span>
+            <span class="brand-copy">
+              <strong>ESPERON</strong>
+              <small>Trainee portal</small>
+            </span>
+          </a>
+          <div class="side-label">Workspace</div>
+          <nav class="nav">
+            <a class="nav-link" href="dashboard.html">
+              <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+              <span>Dashboard</span>
+            </a>
+            <a class="nav-link" href="application.html">
+              <span class="nav-icon"><i class="fa-solid fa-file-signature"></i></span>
+              <span>Application</span>
+            </a>
+            <a class="nav-link" href="assessments.html">
+              <span class="nav-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span>Assessments</span>
+              <span class="nav-count">2</span>
+            </a>
+            <a class="nav-link" href="results.html">
+              <span class="nav-icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+              <span>Results</span>
+            </a>
+            <a class="nav-link is-active" href="payments.html" aria-current="page">
+              <span class="nav-icon"><i class="fa-solid fa-wallet"></i></span>
+              <span>Payments</span>
+            </a>
+            <a class="nav-link" href="maintenance.html">
+              <span class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+              <span>Cow maintenance</span>
+            </a>
+          </nav>
+          <div class="side-bottom">
+            <div class="support-card">
+              <span class="support-icon"><i class="fa-solid fa-headset"></i></span>
+              <div>
+                <strong>Need a hand?</strong>
+                <p>Reach your training coordinator.</p>
+                <a href="mailto:training@esperon.example">
+                  Contact support
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-row">
+              <a class="profile-account" href="profile.html" aria-label="View profile information for John Doe">
+                <div class="avatar">JD</div>
+                <div class="profile-copy">
+                  <strong>John Doe</strong>
+                  <small>ID #1042 · Batch 2026</small>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square profile-account-icon" aria-hidden="true"></i>
+              </a>
+              <button
+                class="theme-toggle"
+                type="button"
+                data-theme-toggle
+                aria-label="Toggle color theme"
+              >
+                <i class="fa-solid fa-moon i-moon"></i>
+                <i class="fa-solid fa-sun i-sun"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="page-main">
+        <header class="topbar">
+          <div class="breadcrumb">
+            <span>Workspace</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <strong>Payments</strong>
+          </div>
+          <div class="topbar-actions">
+            <button
+              class="icon-button"
+              type="button"
+              data-action="open-notifications"
+              aria-label="Open notifications"
+            >
+              <i class="fa-regular fa-bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+            <div class="topbar-date">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Tuesday, October 20, 2026</span>
+            </div>
+          </div>
+        </header>
+        <div class="page-content">
+          <section class="page-title-row">
+            <div>
+              <div class="eyebrow-row">
+                <span>Payment balance</span>
+                <i class="fa-solid fa-circle"></i>
+                <span>Batch 2026</span>
+              </div>
+              <h1>Training payments</h1>
+              <p>
+                Track your total training payment, remaining balance, and cleared payment history in
+                one place.
+              </p>
+            </div>
+            <div class="page-actions">
+              <button class="button button-primary" type="button" data-action="make-payment">
+                <i class="fa-solid fa-plus"></i>
+                <span>Make a payment</span>
+              </button>
+            </div>
+          </section>
+          <section class="stat-grid" aria-label="Payment summary">
+            <article class="stat-card">
+              <span class="stat-label">Total training payment</span>
+              <strong class="stat-value">$1,500</strong>
+              <small class="stat-help">Dairy Husbandry Module</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Amount paid</span>
+              <strong class="stat-value">$900</strong>
+              <small class="stat-help">2 cleared transactions</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Remaining balance</span>
+              <strong class="stat-value">$600</strong>
+              <small class="stat-help">40% still due</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Next due date</span>
+              <strong class="stat-value">Nov 01</strong>
+              <small class="stat-help">Installment 2 · $600</small>
+            </article>
+          </section>
+          <div class="page-grid">
+            <section class="page-card card-pad">
+              <div class="card-heading">
+                <div>
+                  <h2>Payment balance</h2>
+                  <p>Keep your training account up to date.</p>
+                </div>
+                <span class="status-pill status-pill-progress">40% remaining</span>
+              </div>
+              <div class="amount-highlight">
+                $600
+                <small>remaining of $1,500</small>
+              </div>
+              <div class="payment-progress">
+                <div class="progress-summary">
+                  <span>Paid to date</span>
+                  <strong>$900 / $1,500</strong>
+                </div>
+                <div
+                  class="page-progress"
+                  role="progressbar"
+                  aria-label="Payment progress"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span></span>
+                </div>
+              </div>
+              <div class="notice">
+                <i class="fa-regular fa-calendar"></i>
+                <span>
+                  Your next installment of
+                  <strong>$600.00</strong>
+                  is due on November 01, 2026.
+                </span>
+              </div>
+              <div class="form-actions">
+                <button class="button button-primary" type="button" data-action="pay-balance">
+                  Pay remaining balance
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </section>
+            <aside class="page-card card-pad">
+              <div class="card-heading">
+                <div>
+                  <h2>Payment plan</h2>
+                  <p>Installment schedule</p>
+                </div>
+                <span class="icon-box blush"><i class="fa-solid fa-calendar-check"></i></span>
+              </div>
+              <dl class="data-list">
+                <div class="data-row">
+                  <dt>Registration deposit</dt>
+                  <dd>$500 · Cleared</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Installment 1</dt>
+                  <dd>$400 · Cleared</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Installment 2</dt>
+                  <dd>$600 · Due Nov 01</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+          <section class="page-card card-pad" aria-labelledby="payment-history-title">
+            <div class="card-heading">
+              <div>
+                <h2 id="payment-history-title">Payment history</h2>
+                <p>Receipts and cleared transactions for your training account.</p>
+              </div>
+              <button
+                class="button button-quiet button-small"
+                type="button"
+                data-action="download-receipts"
+              >
+                <i class="fa-solid fa-download"></i>
+                Download receipts
+              </button>
+            </div>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Reference</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Receipt</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="table-date">Oct 15, 2026</span>
+                        <span class="table-time">09:42 AM</span>
+                      </td>
+                      <td><code>PAY-9102</code></td>
+                      <td>
+                        <strong>Installment 1 payment</strong>
+                        <span class="table-subtext">Dairy Husbandry Module</span>
+                      </td>
+                      <td class="amount-positive"><strong>$400.00</strong></td>
+                      <td><span class="status-pill status-pill-approved">Cleared</span></td>
+                      <td>
+                        <button
+                          class="button button-quiet button-small"
+                          type="button"
+                          data-action="download-receipt"
+                          data-reference="PAY-9102"
+                        >
+                          PDF
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="table-date">Oct 01, 2026</span>
+                        <span class="table-time">11:18 AM</span>
+                      </td>
+                      <td><code>PAY-8821</code></td>
+                      <td>
+                        <strong>Initial registration deposit</strong>
+                        <span class="table-subtext">Batch 2026 enrollment</span>
+                      </td>
+                      <td class="amount-positive"><strong>$500.00</strong></td>
+                      <td><span class="status-pill status-pill-approved">Cleared</span></td>
+                      <td>
+                        <button
+                          class="button button-quiet button-small"
+                          type="button"
+                          data-action="download-receipt"
+                          data-reference="PAY-8821"
+                        >
+                          PDF
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="page-card card-pad" id="payment-form">
+            <div class="card-heading">
+              <div>
+                <h2>Pay your balance</h2>
+                <p>Choose an amount to continue to secure payment.</p>
+              </div>
+              <span class="icon-box cream"><i class="fa-solid fa-credit-card"></i></span>
+            </div>
+            <form class="form-grid" data-payment-form action="#payment-form" method="post">
+              <div class="form-field">
+                <label for="payment-amount">Payment amount</label>
+                <select id="payment-amount" name="payment_amount">
+                  <option value="600">Remaining balance — $600.00</option>
+                  <option value="300">Custom installment — $300.00</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="payment-method">Payment method</label>
+                <select id="payment-method" name="payment_method">
+                  <option>Choose a method</option>
+                  <option>Online bank transfer</option>
+                  <option>Card payment</option>
+                </select>
+              </div>
+              <div class="form-actions form-field full">
+                <button class="button button-primary" type="submit" data-action="checkout-payment">
+                  Continue to secure payment
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </section>
+          <footer class="page-footer">
+            <span>ESPERON Trainee Portal</span>
+            <span>
+              Need help?
+              <a href="mailto:training@esperon.example">Contact your coordinator</a>
+            </span>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
