@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View cow feeding, drinking, medication schedules and record completed maintenance activities."
+    />
+    <title>Cow Maintenance · ESPERON Trainee Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../../css/style.css" rel="stylesheet" />
+    <link href="../../../css/portal.css" rel="stylesheet" />
+    <link href="../../../css/pages.css" rel="stylesheet" />
+  </head>
+  <body data-page="maintenance">
+    <div class="portal-shell">
+      <aside class="side" aria-label="Primary navigation">
+        <div class="side-inner">
+          <a class="brand" href="dashboard.html">
+            <span class="brand-mark"><i class="fa-solid fa-cow"></i></span>
+            <span class="brand-copy">
+              <strong>ESPERON</strong>
+              <small>Trainee portal</small>
+            </span>
+          </a>
+          <div class="side-label">Workspace</div>
+          <nav class="nav">
+            <a class="nav-link" href="dashboard.html">
+              <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+              <span>Dashboard</span>
+            </a>
+            <a class="nav-link" href="application.html">
+              <span class="nav-icon"><i class="fa-solid fa-file-signature"></i></span>
+              <span>Application</span>
+            </a>
+            <a class="nav-link" href="assessments.html">
+              <span class="nav-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span>Assessments</span>
+              <span class="nav-count">2</span>
+            </a>
+            <a class="nav-link" href="results.html">
+              <span class="nav-icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+              <span>Results</span>
+            </a>
+            <a class="nav-link" href="payments.html">
+              <span class="nav-icon"><i class="fa-solid fa-wallet"></i></span>
+              <span>Payments</span>
+            </a>
+            <a class="nav-link is-active" href="maintenance.html" aria-current="page">
+              <span class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+              <span>Cow maintenance</span>
+            </a>
+          </nav>
+          <div class="side-bottom">
+            <div class="support-card">
+              <span class="support-icon"><i class="fa-solid fa-headset"></i></span>
+              <div>
+                <strong>Need a hand?</strong>
+                <p>Reach your training coordinator.</p>
+                <a href="mailto:training@esperon.example">
+                  Contact support
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-row">
+              <a class="profile-account" href="profile.html" aria-label="View profile information for John Doe">
+                <div class="avatar">JD</div>
+                <div class="profile-copy">
+                  <strong>John Doe</strong>
+                  <small>ID #1042 · Batch 2026</small>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square profile-account-icon" aria-hidden="true"></i>
+              </a>
+              <button
+                class="theme-toggle"
+                type="button"
+                data-theme-toggle
+                aria-label="Toggle color theme"
+              >
+                <i class="fa-solid fa-moon i-moon"></i>
+                <i class="fa-solid fa-sun i-sun"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="page-main">
+        <header class="topbar">
+          <div class="breadcrumb">
+            <span>Workspace</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <strong>Cow maintenance</strong>
+          </div>
+          <div class="topbar-actions">
+            <button
+              class="icon-button"
+              type="button"
+              data-action="open-notifications"
+              aria-label="Open notifications"
+            >
+              <i class="fa-regular fa-bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+            <div class="topbar-date">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Tuesday, October 20, 2026</span>
+            </div>
+          </div>
+        </header>
+        <div class="page-content">
+          <section class="page-title-row">
+            <div>
+              <div class="eyebrow-row">
+                <span>Daily livestock routine</span>
+                <i class="fa-solid fa-circle"></i>
+                <span>Tuesday, October 20</span>
+              </div>
+              <h1>Cow maintenance</h1>
+              <p>
+                View today’s feeding, drinking, and medication schedule, then record each completed
+                activity.
+              </p>
+            </div>
+            <div class="page-actions">
+              <button class="button button-primary" type="button" data-action="record-activity">
+                <i class="fa-solid fa-plus"></i>
+                <span>Record activity</span>
+              </button>
+            </div>
+          </section>
+          <section class="stat-grid" aria-label="Maintenance summary">
+            <article class="stat-card">
+              <span class="stat-label">Completed today</span>
+              <strong class="stat-value">2 / 4</strong>
+              <small class="stat-help">50% of scheduled logs</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Next activity</span>
+              <strong class="stat-value">04:00 PM</strong>
+              <small class="stat-help">Vitamin B supplement</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Feeding logs</span>
+              <strong class="stat-value">1 / 1</strong>
+              <small class="stat-help">Morning feeding recorded</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Medication logs</span>
+              <strong class="stat-value">0 / 1</strong>
+              <small class="stat-help">Due this afternoon</small>
+            </article>
+          </section>
+          <div class="page-grid">
+            <section class="page-card card-pad" aria-labelledby="schedule-title">
+              <div class="card-heading">
+                <div>
+                  <h2 id="schedule-title">Today’s schedule</h2>
+                  <p>Keep the daily routine complete and on time.</p>
+                </div>
+                <span class="icon-box"><i class="fa-solid fa-calendar-day"></i></span>
+              </div>
+              <div class="filter-row" role="group" aria-label="Filter maintenance schedule">
+                <button class="filter-button is-selected" type="button" data-filter="all">
+                  All activities
+                </button>
+                <button class="filter-button" type="button" data-filter="feeding">Feeding</button>
+                <button class="filter-button" type="button" data-filter="drinking">Drinking</button>
+                <button class="filter-button" type="button" data-filter="medication">
+                  Medication
+                </button>
+              </div>
+              <div class="schedule-card" data-schedule-list>
+                <div class="schedule-card-header">
+                  <div>
+                    <h3>Tuesday, October 20</h3>
+                    <p>Four required activities for today</p>
+                  </div>
+                  <span class="status-pill status-pill-progress">2 remaining</span>
+                </div>
+                <div class="schedule-row" data-activity-type="feeding">
+                  <span class="schedule-time">07:30 AM</span>
+                  <div>
+                    <strong>Morning feeding</strong>
+                    <small>Provide the scheduled ration and check appetite.</small>
+                  </div>
+                  <label class="check-control">
+                    <input type="checkbox" checked data-activity="feeding-morning" />
+                    Completed
+                  </label>
+                </div>
+                <div class="schedule-row" data-activity-type="drinking">
+                  <span class="schedule-time">10:15 AM</span>
+                  <div>
+                    <strong>Fresh water check</strong>
+                    <small>Refresh water and confirm the drinking area is clean.</small>
+                  </div>
+                  <label class="check-control">
+                    <input type="checkbox" checked data-activity="drinking-morning" />
+                    Completed
+                  </label>
+                </div>
+                <div class="schedule-row" data-activity-type="medication">
+                  <span class="schedule-time">04:00 PM</span>
+                  <div>
+                    <strong>Vitamin B supplement</strong>
+                    <small>Administer the assigned supplement and record dosage.</small>
+                  </div>
+                  <label class="check-control">
+                    <input type="checkbox" data-activity="medication-vitamin-b" />
+                    Mark done
+                  </label>
+                </div>
+                <div class="schedule-row" data-activity-type="feeding">
+                  <span class="schedule-time">06:30 PM</span>
+                  <div>
+                    <strong>Evening health log</strong>
+                    <small>Record appetite, movement, and any visible concerns.</small>
+                  </div>
+                  <label class="check-control">
+                    <input type="checkbox" data-activity="feeding-evening" />
+                    Mark done
+                  </label>
+                </div>
+              </div>
+            </section>
+            <aside class="stack">
+              <section class="page-card card-pad">
+                <div class="card-heading">
+                  <div>
+                    <h2>Recording tips</h2>
+                    <p>Make every log useful.</p>
+                  </div>
+                  <span class="icon-box cream"><i class="fa-solid fa-lightbulb"></i></span>
+                </div>
+                <ul class="choice-list">
+                  <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Record the activity immediately after it is completed.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Include dosage, quantity, or observations where relevant.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Flag unusual appetite, drinking, or behaviour to your trainer.</span>
+                  </li>
+                </ul>
+              </section>
+              <section class="notice">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>
+                  Medication activities must be recorded with the exact product and dosage used.
+                </span>
+              </section>
+            </aside>
+          </div>
+          <section
+            class="page-card card-pad"
+            id="activity-form"
+            aria-labelledby="activity-form-title"
+          >
+            <div class="card-heading">
+              <div>
+                <h2 id="activity-form-title">Record a completed activity</h2>
+                <p>Submit a manual activity record for today’s schedule.</p>
+              </div>
+              <span class="icon-box blush"><i class="fa-solid fa-clipboard-check"></i></span>
+            </div>
+            <form class="form-grid" data-activity-form action="#activity-form" method="post">
+              <div class="form-field">
+                <label for="activity-type">Activity type</label>
+                <select id="activity-type" name="activity_type">
+                  <option value="feeding">Feeding</option>
+                  <option value="drinking">Drinking</option>
+                  <option value="medication">Medication</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="activity-time">Completed at</label>
+                <input id="activity-time" name="completed_at" type="time" value="16:00" />
+              </div>
+              <div class="form-field">
+                <label for="activity-cow">Cow / group</label>
+                <select id="activity-cow" name="cow_group">
+                  <option>Group A · Dairy cows</option>
+                  <option>Group B · Heifers</option>
+                  <option>Individual cow record</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="activity-quantity">Quantity or dosage</label>
+                <input
+                  id="activity-quantity"
+                  name="quantity"
+                  type="text"
+                  placeholder="e.g. 2 kg or 10 ml"
+                />
+              </div>
+              <div class="form-field full">
+                <label for="activity-notes">Observations</label>
+                <textarea
+                  id="activity-notes"
+                  name="notes"
+                  placeholder="Add appetite, water intake, behaviour, or medication notes."
+                ></textarea>
+                <span class="form-help">This note will be visible to your lead trainer.</span>
+              </div>
+              <div class="form-actions form-field full">
+                <button class="button button-quiet" type="reset">Clear</button>
+                <button class="button button-primary" type="submit" data-action="save-activity">
+                  Save activity record
+                  <i class="fa-solid fa-check"></i>
+                </button>
+              </div>
+            </form>
+          </section>
+          <footer class="page-footer">
+            <span>ESPERON Trainee Portal</span>
+            <span>
+              Need help?
+              <a href="mailto:training@esperon.example">Contact your coordinator</a>
+            </span>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

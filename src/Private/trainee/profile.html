@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View your ESPERON trainee profile information." />
+    <title>Profile Information · ESPERON Trainee Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../../css/style.css" rel="stylesheet" />
+    <link href="../../../css/portal.css" rel="stylesheet" />
+    <link href="../../../css/pages.css" rel="stylesheet" />
+  </head>
+  <body data-page="profile">
+    <div class="portal-shell">
+      <aside class="side" aria-label="Primary navigation">
+        <div class="side-inner">
+          <a class="brand" href="dashboard.html" aria-label="ESPERON trainee portal home">
+            <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-cow"></i></span>
+            <span class="brand-copy">
+              <strong>ESPERON</strong>
+              <small>Trainee portal</small>
+            </span>
+          </a>
+          <div class="side-label">Workspace</div>
+          <nav class="nav">
+            <a class="nav-link" href="dashboard.html">
+              <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+              <span>Dashboard</span>
+            </a>
+            <a class="nav-link" href="application.html">
+              <span class="nav-icon"><i class="fa-solid fa-file-signature"></i></span>
+              <span>Application</span>
+            </a>
+            <a class="nav-link" href="assessments.html">
+              <span class="nav-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span>Assessments</span>
+              <span class="nav-count">2</span>
+            </a>
+            <a class="nav-link" href="results.html">
+              <span class="nav-icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+              <span>Results</span>
+            </a>
+            <a class="nav-link" href="payments.html">
+              <span class="nav-icon"><i class="fa-solid fa-wallet"></i></span>
+              <span>Payments</span>
+            </a>
+            <a class="nav-link" href="maintenance.html">
+              <span class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+              <span>Cow maintenance</span>
+            </a>
+          </nav>
+          <div class="side-bottom">
+            <div class="support-card">
+              <span class="support-icon"><i class="fa-solid fa-headset"></i></span>
+              <div>
+                <strong>Need a hand?</strong>
+                <p>Reach your training coordinator.</p>
+                <a href="mailto:training@esperon.example">Contact support <span>↗</span></a>
+              </div>
+            </div>
+            <div class="profile-row">
+              <a
+                class="profile-account is-active"
+                href="profile.html"
+                aria-label="Profile information for John Doe"
+                aria-current="page"
+              >
+                <div class="avatar" aria-hidden="true">JD</div>
+                <div class="profile-copy">
+                  <strong>John Doe</strong>
+                  <small>ID #1042 · Batch 2026</small>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square profile-account-icon" aria-hidden="true"></i>
+              </a>
+              <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">
+                <i class="fa-solid fa-moon i-moon" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun i-sun" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="page-main">
+        <header class="topbar">
+          <div class="breadcrumb">
+            <span>Workspace</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            <strong>Profile information</strong>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" type="button" data-action="open-notifications" aria-label="Open notifications">
+              <i class="fa-regular fa-bell" aria-hidden="true"></i>
+              <span class="notification-dot" aria-hidden="true"></span>
+            </button>
+            <div class="topbar-date">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+              <span>Tuesday, October 20, 2026</span>
+            </div>
+          </div>
+        </header>
+        <div class="page-content">
+          <section class="page-title-row">
+            <div>
+              <div class="eyebrow-row">
+                <span>Trainee account</span>
+                <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                <span>ID #1042</span>
+              </div>
+              <h1>Profile information</h1>
+              <p>Your personal and training details currently on file.</p>
+            </div>
+          </section>
+          <section class="page-card card-pad" aria-labelledby="profile-summary-title">
+            <div class="card-heading">
+              <div>
+                <h2 id="profile-summary-title">Trainee profile</h2>
+                <p>Personal information and current enrollment.</p>
+              </div>
+              <span class="icon-box blush"><i class="fa-solid fa-user"></i></span>
+            </div>
+            <div class="page-grid equal">
+              <dl class="data-list">
+                <div class="data-row">
+                  <dt>Full name</dt>
+                  <dd>John Doe</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Trainee ID</dt>
+                  <dd>#1042</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Email</dt>
+                  <dd>john.doe@example.com</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Phone</dt>
+                  <dd>+63 917 555 0142</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Emergency contact</dt>
+                  <dd>Maria Doe · +63 917 555 0199</dd>
+                </div>
+              </dl>
+              <dl class="data-list">
+                <div class="data-row">
+                  <dt>Training batch</dt>
+                  <dd>Batch 2026</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Program</dt>
+                  <dd>Dairy Husbandry Module</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Training period</dt>
+                  <dd>October–December 2026</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Lead trainer</dt>
+                  <dd>Dr. Aris Thorne</dd>
+                </div>
+                <div class="data-row">
+                  <dt>Training location</dt>
+                  <dd>ESPERON Learning Farm</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+          <footer class="page-footer">
+            <span>ESPERON Trainee Portal</span>
+            <span>Need help? <a href="mailto:training@esperon.example">Contact your coordinator</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
